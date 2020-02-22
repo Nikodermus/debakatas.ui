@@ -8,7 +8,7 @@ import Slider from '../components/Atoms/Slider';
 
 const IndexPage = () => (
     <div className="home">
-        <header className="home-header">
+        <header className="home-header np-element">
             <figure className="user-pic np-element np-hover np-circle-xl np-shadow-border-circle">
                 <img
                     className="user-pic__img"
@@ -31,6 +31,7 @@ const IndexPage = () => (
                 'https://loremflickr.com/200/200/sport',
             ]}
             title="Tus Beneficiarios"
+            className="home__slider"
             withPlus
         ></Slider>
         <Slider
@@ -41,6 +42,7 @@ const IndexPage = () => (
                 'https://loremflickr.com/200/200/sport',
             ]}
             title="Tus Compras"
+            className="home__slider"
         ></Slider>
         <Slider
             img={[
@@ -49,6 +51,7 @@ const IndexPage = () => (
                 'https://loremflickr.com/200/200/sport',
                 'https://loremflickr.com/200/200/sport',
             ]}
+            className="home__slider"
             title="Tus Compras"
         ></Slider>
         <SEO
