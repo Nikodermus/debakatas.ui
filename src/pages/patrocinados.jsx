@@ -1,7 +1,9 @@
 import React from 'react';
 import WithFooter from '../components/Molecules/WithFooter';
+import Item from './patrocinados/item';
 
 const Patrocinados = () => (
+<<<<<<< HEAD
     <div className="patrocinados">
         <h2 className="title-patrocinados np-element margin">
             Patrocina a un campeón
@@ -23,6 +25,10 @@ const Patrocinados = () => (
                 </p>
             </div>
         </div>
+=======
+    <div>
+        <Item></Item>
+>>>>>>> 2b2a9493640d183cd3e6619e36692687848bca7d
     </div>
 );
 
