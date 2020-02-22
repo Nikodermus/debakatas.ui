@@ -4,6 +4,7 @@ import debounce from 'lodash.debounce';
 import SEO from '../components/Atoms/SEO';
 import WithFooter from '../components/Molecules/WithFooter';
 import Progress from '../components/Atoms/Progress';
+import Slider from '../components/Atoms/Slider';
 
 const IndexPage = () => (
     <div className="home">
@@ -22,32 +23,34 @@ const IndexPage = () => (
                 <small className="user-info__lvl">lvl 12</small>
             </div>
         </header>
-        <div>
-            <h2>Tus beneficiarios</h2>
-            <ul>
-                <li>
-                    <a href="">
-                        <img
-                            src="https://loremflickr.com/200/200/sport"
-                            alt=""
-                        />
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <h2>Tus Compras</h2>
-            <ul>
-                <li>
-                    <a href="">
-                        <img
-                            src="https://loremflickr.com/200/200/sport"
-                            alt=""
-                        />
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <Slider
+            img={[
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+            ]}
+            title="Tus Beneficiarios"
+            withPlus
+        ></Slider>
+        <Slider
+            img={[
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+            ]}
+            title="Tus Compras"
+        ></Slider>
+        <Slider
+            img={[
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+            ]}
+            title="Tus Compras"
+        ></Slider>
         <SEO
             description="Genera ayuda social con tus compras"
             title="deBakatas Half Hackaton"
