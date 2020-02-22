@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Slider = ({ className, title, img = [], withPlus = false }) => (
-    <div className={`${className} slider`}>
+    <div className={`${className} slider np-element`}>
         <h3 className="slider__title">{title}</h3>
         <ul className="slider-list">
             {img.map((i) => (
