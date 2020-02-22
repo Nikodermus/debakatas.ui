@@ -1,7 +1,12 @@
 import React from 'react';
 import WithFooter from '../components/Molecules/WithFooter';
+import Item from './patrocinados/item';
 
-const Patrocinados = () => <div>a</div>;
+const Patrocinados = () => (
+    <div>
+        <Item></Item>
+    </div>
+);
 
 export default () => (
     <WithFooter>
