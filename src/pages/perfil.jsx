@@ -14,7 +14,7 @@ const Perfil = () => (
             </div>
             <figcaption className="perfil__info">
                 <div className="info-perfil np-element">
-                    <h1 className="info-perfil__name">Pepa Gonzales</h1>
+                    <h1 className="info-perfil__name">Paola Gonzales</h1>
                     <i className="info-perfil__gender np-img-wrapper np-element ">
                         <svg
                             version="1.1"
@@ -69,20 +69,28 @@ const Perfil = () => (
             <p className="datos__dato">uncorreofalso@correo.com</p>
         </div>
         <div className="datos np-element">
-            <h3 className="datos__titulo">Fecha de Nacimiento</h3>
-            <p className="datos__dato">Diciembre 12 de 1981</p>
-        </div>
-        <div className="datos np-element">
             <h3 className="datos__titulo">Teléfono</h3>
             <p className="datos__dato">320 897 2130</p>
         </div>
+        <div className="datos np-element">
+            <h3 className="datos__titulo">Fecha de Nacimiento</h3>
+            <p className="datos__dato">Diciembre 12 de 1981</p>
+        </div>
 
-        <div>
-            <h2>Historico de compras</h2>
-            <ul>
-                <li>
-                    <h3>Compra en Adidas</h3>
-                    <span>+12 pts</span>
+        <div className="historico">
+            <h2 className="historico__title">Historico de compras</h2>
+            <ul className="historico__list">
+                <li className="list-historico np-element margin">
+                    <h3 className="list-historico__title">Compra en Adidas</h3>
+                    <span className="list-historico__data">+12 pts</span>
+                </li>
+                <li className="list-historico np-element margin">
+                    <h3 className="list-historico__title">Compra en Adidas</h3>
+                    <span className="list-historico__data">+12 pts</span>
+                </li>
+                <li className="list-historico np-element margin">
+                    <h3 className="list-historico__title">Compra en Adidas</h3>
+                    <span className="list-historico__data">+12 pts</span>
                 </li>
             </ul>
         </div>

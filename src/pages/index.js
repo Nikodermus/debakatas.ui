@@ -40,6 +40,17 @@ const IndexPage = () => (
                 'https://loremflickr.com/200/200/sport',
                 'https://loremflickr.com/200/200/sport',
                 'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
+                'https://loremflickr.com/200/200/sport',
             ]}
             title="Tus Compras"
             className="home__slider"
