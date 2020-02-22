@@ -1,0 +1,45 @@
+.main-header
+    align-items: center
+    display: flex
+    font-size: font-size-XL
+    justify-content: space-between
+    left: 0
+    padding: sizing-XL
+    position: fixed
+    top: 0
+    width: 100%
+
+.db-logo
+    display: flex
+
+    &__img
+        width: element-sizing-logo
+
+.header-title
+    color: color-brand-red
+
+    &__highlight
+        color: color-brand-blue
+
+.title-wrapper
+    position: relative
+
+.title-in
+    transform: translateY(100%)
+    opacity: 0
+
+    &--active
+        transform: translateY(0)
+        opacity: 1
+
+.title-out
+    transform: translateY(0)
+    position: absolute
+    top: 0
+    right: 0
+    white-space: nowrap
+    opacity: 1
+
+    &--active
+        transform: translateY(-100%)
+        opacity: 0

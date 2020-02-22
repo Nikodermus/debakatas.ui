@@ -1,0 +1,81 @@
+.contact-description
+    padding: 0 sizing-XL
+    text-align: center
+
+    &__logo
+        padding-top: sizing-XL
+        padding-bottom: sizing-MD
+
+    &__text
+        margin-bottom: sizing-LG
+
+.contact-email
+    font-family: font-family-default
+    font-size: font-size-XL
+    font-weight: font-weight-bld
+    margin-bottom: sizing-XL
+    text-align: center
+    text-decoration: underline
+
+.authors-info
+    display: flex
+    font-size: font-size-MD
+    font-style: italic
+    justify-content: space-evenly
+    margin: auto
+    margin-bottom: sizing-XL
+    text-align: center
+
+    &__username
+        font-family: font-family-default
+        font-weight: font-weight-bld
+        text-decoration: underline
+
+        &:hover
+            color: color-brand-green
+
+    &__phone
+        color: color-gray-dark
+        font-size: font-size-SM
+        text-decoration: none
+
+    &__img
+        height: element-sizing-heads
+        transform: scale(1)
+
+        &:hover
+            transform: scale(1.2)
+
+.social-networks
+    display: flex
+    justify-content: space-evenly
+    overflow: visible
+    padding: 0 sizing-XL
+    padding-bottom: sizing-MD
+    position: relative
+
+    &__bg
+        left: 0
+        position: absolute
+        top: -50%
+        transform: rotate(180deg)
+        z-index: z-index-backtap
+
+        path
+            fill: color-gray-dark
+
+.social-item
+    align-items: center
+    background: color-brand-red
+    border-radius: border-radius-round
+    display: flex
+    height: sizing-4XL
+    justify-content: center
+    width: @height
+    color-hover(@background)
+
+    &__link
+        align-items: center
+        display: flex
+        flex: 1
+        justify-content: center

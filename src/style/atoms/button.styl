@@ -1,0 +1,18 @@
+.button
+    background: color-brand-red
+    border-radius: border-radius-XL
+    min-width: element-sizing-button
+    padding: sizing-MD sizing-XL
+    position: relative
+    color-hover(@background)
+
+    &:hover &__arrow
+        transform: "translateX(calc(100% + %s))" % sizing-MD
+
+    &__arrow
+        position: absolute
+        right: 0
+        transform: "translateX(calc(100% + %s))" % sizing-SM
+
+        path
+            fill: color-brand-green

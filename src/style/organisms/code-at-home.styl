@@ -1,0 +1,49 @@
+.cah-section
+    padding: sizing-2XL
+    text-align: center
+
+    &__description
+        padding: 0 sizing-XL
+        margin-bottom: sizing-2XL
+
+.image-home
+    shape-offset = -5%
+    margin-offset = shape-offset * -1
+    position: relative
+    padding: sizing-XL
+    margin-bottom: "calc(%s + %s)" % (margin-offset sizing-XL)
+
+    &__float
+        position: absolute
+
+        &--dog
+            width: 50%
+            right: 0
+            bottom: 0
+
+        &--green
+            z-index: z-index-backtap
+            bottom: shape-offset
+            left: 30%
+            width: 35%
+            transform: rotate(-90deg)
+
+            path
+                fill: color-brand-green
+
+        &--blue
+            z-index: z-index-backtap
+            top: shape-offset
+            left: @top
+            width: 40%
+
+            path
+                fill: color-brand-blue
+
+        &--red
+            right: shape-offset
+            bottom: 30%
+            width: 30%
+
+            path
+                fill: color-brand-red
