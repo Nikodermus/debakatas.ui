@@ -8,9 +8,9 @@ size = 10px
         left: "calc(100% - %s)" % size
 
 .progress
-    width: 100%
-    padding: 0 !important
     overflow: hidden
+    padding: 0 !important
+    width: 100%
 
     &--yellow &__bar
         background: color-brand-yellow
@@ -24,18 +24,24 @@ size = 10px
         &::after
             background: lighten(@background, 40%)
 
-    &__bar
-        height: size
-        position: relative
-        display: block
-        overflow: hidden
+    &--green &__bar
+        background: color-brand-green
 
         &::after
+            background: lighten(@background, 40%)
+
+    &__bar
+        display: block
+        height: size
+        overflow: hidden
+        position: relative
+
+        &::after
+            animation: progress 2s ease-in-out infinite alternate
             content: ""
             display: block
+            height: size
+            left: 0
             position: absolute
             top: 0
-            left: 0
-            height: size
             width: size
-            animation: progress 2s ease-in-out infinite alternate

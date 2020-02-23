@@ -8,21 +8,65 @@ const Patrocinados = () => (
             Patrocina a un campeón
         </h2>
         <div className="patrocinado np-element margin">
-            <img
-                className="patrocinado__pic"
-                src="https://loremflickr.com/350/200/sport"
-                alt=""
-            />
-            <div className="patrocinado__info patrocinado-info">
-                <h3 className="patrocinado-info__title">Los 5 del 20</h3>
-                <p className="patrocinado-info__description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dignissimos, magnam. Iste odio officiis exercitationem
-                    aliquam, quas laudantium consequatur ipsam sit delectus?
-                    Ipsam est numquam vero consequatur repellendus sint autem
-                    nulla?
-                </p>
-            </div>
+            <ul className="patrocinado__info">
+                <li className=" patrocinado-info np-element">
+                    <img
+                        className="patrocinado__pic "
+                        src="https://loremflickr.com/350/200/sport"
+                        alt=""
+                    />
+                    <h3 className="patrocinado-info__title">Los 5 del 20</h3>
+                    <p className="patrocinado-info__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dignissimos, magnam. Iste odio officiis exercitationem
+                        aliquam, quas laudantium consequatur ipsam sit delectus?
+                    </p>
+                    <button
+                        type="submit"
+                        className="patrocinado-info__btn np-element"
+                    >
+                        Ver Más
+                    </button>
+                </li>
+                <li className=" patrocinado-info np-element">
+                    <img
+                        className="patrocinado__pic "
+                        src="https://loremflickr.com/350/200/sport"
+                        alt=""
+                    />
+                    <h3 className="patrocinado-info__title">Los 5 del 20</h3>
+                    <p className="patrocinado-info__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dignissimos, magnam. Iste odio officiis exercitationem
+                        aliquam, quas laudantium consequatur ipsam sit delectus?
+                    </p>
+                    <button
+                        type="submit"
+                        className="patrocinado-info__btn np-element"
+                    >
+                        Ver Más
+                    </button>
+                </li>
+                <li className=" patrocinado-info np-element">
+                    <img
+                        className="patrocinado__pic"
+                        src="https://loremflickr.com/350/200/sport"
+                        alt=""
+                    />
+                    <h3 className="patrocinado-info__title">Los 5 del 20</h3>
+                    <p className="patrocinado-info__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dignissimos, magnam. Iste odio officiis exercitationem
+                        aliquam, quas laudantium consequatur ipsam sit delectus?
+                    </p>
+                    <button
+                        type="submit"
+                        className="patrocinado-info__btn np-element"
+                    >
+                        Ver Más
+                    </button>
+                </li>
+            </ul>
         </div>
     </div>
 );
