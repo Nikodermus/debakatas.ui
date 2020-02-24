@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from '@reach/router';
 import WithFooter from '../../components/Molecules/WithFooter';
 import Progress from '../../components/Atoms/Progress';
+import { awaitJson } from '../../data/pages';
 
 const Item = () => {
     const { search } = useLocation();
     const id = new URLSearchParams(search).get('id');
+
+    const [itemData, setData] = useState({
+        spo_id: '',
+        spo_name: '',
+        spo_desc: '',
+        spo_create: '',
+    });
+
+    const [data, setUsersData] = useState([
+        {
+            user_name: '',
+            user_last: '',
+            user_mail: '',
+            user_ptos_gain: '',
+        },
+    ]);
+
+    useEffect(() => {
+        (async () => {
+            const response = await awaitJson(`unsponsored.php?key=${id}`);
+            const userResponse = await awaitJson('usuarios.php');
+            setData(response.users[0]);
+            setUsersData(userResponse.users);
+        })();
+    }, [id]);
+
+    const { spo_id, spo_name, spo_desc, spo_create } = itemData;
 
     return (
         <div className="item">
@@ -13,23 +41,19 @@ const Item = () => {
                 <div className="patrocinado-item__pic np-element">
                     <img
                         className="patrocinado-item__img "
-                        src="https://loremflickr.com/350/200/sport"
+                        src={`https://loremflickr.com/350/200/sport?id=${id}`}
                         alt=""
                     />
-                    <h3 className="patrocinado-item__title">Los 5 del 20</h3>
+                    <h3 className="patrocinado-item__title">{spo_name}</h3>
                 </div>
                 <div className="np-element">
                     <div className="wish np-element">
                         <h3 className="wish__title">Wish</h3>
                         <img
                             className="wish__pic "
-                            src="https://loremflickr.com/200/200/sport"
+                            src={`https://loremflickr.com/350/200/gift?id=${id}`}
                             alt=""
                         />
-                        <p className="wish__txt">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Modi corporis.
-                        </p>
                     </div>
                     <div className="progreso-patrocinado np-element">
                         <h3 className="progreso-patrocinado__title">
@@ -43,26 +67,11 @@ const Item = () => {
                             Ya nos patrocina
                         </h3>
                         <ul className="patrocinado-por__list">
-                            <li className="patrocinado-por__item">
-                                <a className="patrocinado-por__link" href="#">
-                                    Empresa 1
-                                </a>
-                            </li>
-                            <li className="patrocinado-por__item">
-                                <a className="patrocinado-por__link" href="#">
-                                    Empresa 2
-                                </a>
-                            </li>
-                            <li className="patrocinado-por__item">
-                                <a className="patrocinado-por__link" href="#">
-                                    Empresa 3
-                                </a>
-                            </li>
-                            <li className="patrocinado-por__item">
-                                <a className="patrocinado-por__link" href="#">
-                                    Empresa 4
-                                </a>
-                            </li>
+                            {data.map(({ user_name }) => (
+                                <li className="patrocinado-por__item">
+                                    {user_name}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className="patrocinadoItem-description np-element">
@@ -70,14 +79,7 @@ const Item = () => {
                             Descripción
                         </h3>
                         <p className="patrocinadoItem-description__txt">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Dignissimos, magnam. Iste odio officiis
-                            exercitationem aliquam, quas laudantium consequatur
-                            ipsam sit delectus? Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit. Perspiciatis ab esse
-                            est doloremque eum, nostrum fugit nemo neque, sequi
-                            architecto accusantium dolore temporibus voluptate!
-                            Repellat velit modi omnis provident. Adipisci.
+                            {spo_desc}
                         </p>
                     </div>
                 </div>

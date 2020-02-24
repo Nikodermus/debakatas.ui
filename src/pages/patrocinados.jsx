@@ -1,75 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'gatsby';
 import WithFooter from '../components/Molecules/WithFooter';
-import Item from './patrocinados/item';
+import { awaitJson } from '../data/pages';
 
-const Patrocinados = () => (
-    <div className="patrocinados">
-        <h2 className="title-patrocinados np-element margin">
-            Patrocina a un campeón
-        </h2>
-        <div className="patrocinado np-element margin">
-            <ul className="patrocinado__info">
-                <li className=" patrocinado-info np-element">
-                    <img
-                        className="patrocinado__pic "
-                        src="https://loremflickr.com/350/200/sport"
-                        alt=""
-                    />
-                    <h3 className="patrocinado-info__title">Los 5 del 20</h3>
-                    <p className="patrocinado-info__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dignissimos, magnam. Iste odio officiis exercitationem
-                        aliquam, quas laudantium consequatur ipsam sit delectus?
-                    </p>
-                    <button
-                        type="submit"
-                        className="patrocinado-info__btn np-element"
-                    >
-                        Ver Más
-                    </button>
-                </li>
-                <li className=" patrocinado-info np-element">
-                    <img
-                        className="patrocinado__pic "
-                        src="https://loremflickr.com/350/200/sport"
-                        alt=""
-                    />
-                    <h3 className="patrocinado-info__title">Los 5 del 20</h3>
-                    <p className="patrocinado-info__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dignissimos, magnam. Iste odio officiis exercitationem
-                        aliquam, quas laudantium consequatur ipsam sit delectus?
-                    </p>
-                    <button
-                        type="submit"
-                        className="patrocinado-info__btn np-element"
-                    >
-                        Ver Más
-                    </button>
-                </li>
-                <li className=" patrocinado-info np-element">
-                    <img
-                        className="patrocinado__pic"
-                        src="https://loremflickr.com/350/200/sport"
-                        alt=""
-                    />
-                    <h3 className="patrocinado-info__title">Los 5 del 20</h3>
-                    <p className="patrocinado-info__description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dignissimos, magnam. Iste odio officiis exercitationem
-                        aliquam, quas laudantium consequatur ipsam sit delectus?
-                    </p>
-                    <button
-                        type="submit"
-                        className="patrocinado-info__btn np-element"
-                    >
-                        Ver Más
-                    </button>
-                </li>
-            </ul>
+const Patrocinados = () => {
+    const [data, setData] = useState([
+        {
+            spo_id: '1',
+            spo_name: 'ANTONIO MIRANDA',
+            spo_desc:
+                'Soy deportista paralimpico y me estoy preparando para los Parapanamericanos',
+            spo_create: '2020-02-22 11:34:44',
+        },
+    ]);
+
+    useEffect(() => {
+        (async () => {
+            const response = await awaitJson('sponsored.php');
+            setData(response.users);
+        })();
+    }, []);
+
+    return (
+        <div className="patrocinados">
+            <h2 className="title-patrocinados np-element margin">
+                Patrocina a un campeón
+            </h2>
+            <div className="patrocinado np-element margin">
+                <ul className="patrocinado__info">
+                    {data.map(({ spo_create, spo_id, spo_desc, spo_name }) => (
+                        <li className=" patrocinado-info np-element">
+                            <img
+                                className="patrocinado__pic "
+                                src={`https://loremflickr.com/350/200/people?id=${spo_id}`}
+                                alt=""
+                            />
+                            <h3 className="patrocinado-info__title">
+                                {spo_name}
+                            </h3>
+                            <p className="patrocinado-info__description">
+                                {spo_desc}
+                            </p>
+                            <Link
+                                className="patrocinado-info__btn np-element"
+                                to={`/patrocinados/item?id=${spo_id}`}
+                            >
+                                Ver Más
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default () => (
     <WithFooter>

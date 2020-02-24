@@ -33,3 +33,11 @@ export const data = {
   `,
     },
 };
+
+export const BACK = 'http://jorgeasarria.com/ws';
+
+export const awaitJson = async (path) => {
+    const raw = await fetch(`${BACK}/${path}`);
+    const res = await raw.json();
+    return res;
+};
